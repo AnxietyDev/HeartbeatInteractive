@@ -54,7 +54,7 @@ header {
   background: rgb(0, 0, 0);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 750;
 }
 
 header .logo {
