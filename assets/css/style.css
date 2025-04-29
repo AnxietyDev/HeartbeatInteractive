@@ -112,39 +112,39 @@ nav ul li a:hover {
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
 }
 
-/* Heartbeat Divider */
-.heartbeat-divider {
-  width: 100%;
-  height: 100px;
-  overflow: hidden;
-  position: relative;
-  margin: 40px 0;
-}
-
-.heartbeat-svg {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 200%;
-  height: 100px;
-  transform: translateY(-50%);
-  animation: heartbeat-move 4s linear infinite;
-}
-
-.heartbeat-path {
-  fill: none;
-  stroke: #FF0000;
-  stroke-width: 2;
-}
-
-@keyframes heartbeat-move {
-  0% {
-    transform: translateX(0) translateY(-50%);
+  /* Heartbeat Divider */
+  .heartbeat-divider {
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    position: relative;
+    margin: 40px 0;
   }
-  100% {
-    transform: translateX(-50%) translateY(-50%);
+
+  .heartbeat-svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 200%;
+    height: 100px;
+    transform: translateY(-50%);
+    animation: heartbeat-move 8s linear infinite; /* slowed down! */
   }
-}
+
+  .heartbeat-path {
+    fill: none;
+    stroke: #FF0000;
+    stroke-width: 2;
+  }
+
+  @keyframes heartbeat-move {
+    0% {
+      transform: translateX(0) translateY(-50%);
+    }
+    100% {
+      transform: translateX(-50%) translateY(-50%);
+    }
+  }
 
 
 /* Sections */
