@@ -131,6 +131,11 @@ nav ul li a:hover {
     }
 }
 
+/* Scroll offset for sticky header */
+html {
+  scroll-padding-top: 100px;
+}
+
 
 /* Sections */
 section {
