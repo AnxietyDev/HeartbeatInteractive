@@ -128,7 +128,7 @@ nav ul li a:hover {
     width: 200%;
     height: 100px;
     transform: translateY(-50%);
-    animation: heartbeat-move 8s linear infinite; /* slowed down! */
+    animation: heartbeat-move 8s linear infinite;
   }
 
   .heartbeat-path {
@@ -139,12 +139,13 @@ nav ul li a:hover {
 
   @keyframes heartbeat-move {
     0% {
-      transform: translateX(0) translateY(-50%);
-    }
-    100% {
       transform: translateX(-50%) translateY(-50%);
     }
+    100% {
+      transform: translateX(50%) translateY(-50%);
+    }
   }
+
 
 
 /* Sections */
