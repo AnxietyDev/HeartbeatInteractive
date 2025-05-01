@@ -91,6 +91,7 @@ nav {
   display: flex;
   align-items: center;
   gap: 16px;
+  padding-top: 20px;
 }
 
 /* Default: hide menu for mobile */
