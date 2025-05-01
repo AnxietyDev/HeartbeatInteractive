@@ -6,7 +6,6 @@
   scroll-behavior: smooth;
 }
 
-/* Body & global styles */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #000000;
@@ -14,7 +13,6 @@ body {
   line-height: 1.6;
 }
 
-/* Preloader */
 #preloader {
   position: fixed;
   top: 0;
@@ -45,26 +43,27 @@ body {
   }
 }
 
-/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; /* Simplified */
+  padding: 10px 20px;
   background: rgb(0, 0, 0);
   position: sticky;
   top: 0;
   z-index: 750;
+  flex-wrap: wrap;
 }
 
 header .logo {
-  width: 120px; /* Smaller logo */
+  width: 120px;
 }
 
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -78,46 +77,44 @@ nav ul li a:hover {
   color: #FF0000;
 }
 
-/* Background image */
 .background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* covers area without distortion */
-  z-index: -1;         /* places the image behind the text */
+  object-fit: cover;
+  z-index: -1;
 }
 
-/* Hero Section */
 .hero {
   position: relative;
   height: 100vh;
   display: flex;
-  flex-direction: column; /* Stack vertically */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   background: url('../img/background.png') no-repeat center center/cover;
   padding: 0 20px;
-  overflow: hidden; /* Prevent any overflow caused by absolute elements */
+  overflow: hidden;
 }
 
 .heartbeat-divider.behind-text {
   position: absolute;
-  top: 45%; /* adjust to your liking */
+  top: 45%; 
   left: 0;
   width: 100%;
   height: 100px;
   background: url('../img/heartbeat.png') repeat-x;
   background-size: 800px 100px;
   animation: moveHeartbeat 10s linear infinite;
-  z-index: 0; /* behind text */
-  opacity: 0.9; /* optional, soften it */
+  z-index: 0;
+  opacity: 0.9;
 }
 
 .hero h1 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: bold;
   z-index: 2;
   color: #ffffff;
@@ -143,31 +140,28 @@ nav ul li a:hover {
   background-color: #cc0000;
 }
 
-  /* Heartbeat Divider */
-  .heartbeat-divider {
-    width: 100%;
-    height: 100px;
-    background: url('../img/heartbeat.png') repeat-x;
-    background-size: 800px 100px;
-    animation: moveHeartbeat 10s linear infinite;
-    margin: 40px 0;
-  }
-
-  @keyframes moveHeartbeat {
-    0% {
-      background-position: 0 50%;
-    }
-    100% {
-      background-position: 800px 50%;
-    }
+.heartbeat-divider {
+  width: 100%;
+  height: 100px;
+  background: url('../img/heartbeat.png') repeat-x;
+  background-size: 800px 100px;
+  animation: moveHeartbeat 10s linear infinite;
+  margin: 40px 0;
 }
 
-/* Scroll offset for sticky header */
+@keyframes moveHeartbeat {
+  0% {
+    background-position: 0 50%;
+  }
+  100% {
+    background-position: 800px 50%;
+  }
+}
+
 html {
   scroll-padding-top: 100px;
 }
 
-/* Sections */
 section {
   padding: 60px 20px;
   text-align: center;
@@ -179,10 +173,9 @@ section h2 {
   color: #FF0000;
 }
 
-/* About Section */
 #about {
   padding: 80px 20px;
-  background-color: #0a0a0a; /* darker slightly to separate it from other sections */
+  background-color: #0a0a0a;
   text-align: center;
 }
 
@@ -252,8 +245,6 @@ section h2 {
   color: #FF4444;
 }
 
-
-/* Portfolio Grid */
 .portfolio-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -280,11 +271,59 @@ section h2 {
   margin-bottom: 10px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   padding: 20px;
   font-size: 0.9rem;
   background: rgba(0, 0, 0, 0.8);
   margin-top: 40px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  .scroll-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  header .logo {
+    width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 10px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .scroll-button {
+    font-size: 0.9rem;
+  }
+  section h2 {
+    font-size: 1.8rem;
+  }
+  .about-content {
+    text-align: center;
+  }
+  .about-content .heartbeat-list {
+    padding-left: 20px;
+    text-align: left;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
 }
