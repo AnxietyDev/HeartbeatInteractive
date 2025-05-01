@@ -113,7 +113,7 @@ nav ul li a:hover {
   background-size: 800px 100px;
   animation: moveHeartbeat 10s linear infinite;
   z-index: 0; /* behind text */
-  opacity: 0.2; /* optional, soften it */
+  opacity: 0.9; /* optional, soften it */
 }
 
 .hero h1 {
