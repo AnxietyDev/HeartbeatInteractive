@@ -87,12 +87,19 @@ nav {
 }
 
 /* Burger menu toggle */
+.nav-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* space between burger and links */
+}
+
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: white;
+  cursor: pointer;
 }
 
 nav ul {
@@ -377,16 +384,23 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .nav-wrapper {
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    position: relative;
+  }
+
   .nav-links {
     display: none;
     position: absolute;
-    top: 60px;
-    right: 24px;
+    top: 40px;
+    right: 0;
     background: #111;
     padding: 16px;
     border-radius: 8px;
     flex-direction: column;
     width: 200px;
+    z-index: 999;
   }
 
   .nav-links.active {
@@ -400,5 +414,4 @@ footer {
   nav {
     justify-content: flex-end;
   }
-}
 }
