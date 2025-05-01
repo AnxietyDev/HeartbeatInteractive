@@ -94,20 +94,53 @@ nav ul li a:hover {
   position: relative;
   height: 100vh;
   display: flex;
+  flex-direction: column; /* Stack vertically */
   justify-content: center;
   align-items: center;
   text-align: center;
   background: url('../img/background.png') no-repeat center center/cover;
   padding: 0 20px;
+  overflow: hidden; /* Prevent any overflow caused by absolute elements */
+}
+
+.heartbeat-divider.behind-text {
+  position: absolute;
+  top: 45%; /* adjust to your liking */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background: url('../img/heartbeat.png') repeat-x;
+  background-size: 800px 100px;
+  animation: moveHeartbeat 10s linear infinite;
+  z-index: 0; /* behind text */
+  opacity: 0.2; /* optional, soften it */
 }
 
 .hero h1 {
   font-size: 3.5rem;
-  position: relative;
   font-weight: bold;
-  z-index: 1;
+  z-index: 2;
   color: #ffffff;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.scroll-button {
+  margin-top: 30px;
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #FF0000;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+  position: relative;
+}
+
+.scroll-button:hover {
+  background-color: #cc0000;
 }
 
   /* Heartbeat Divider */
@@ -133,27 +166,6 @@ nav ul li a:hover {
 html {
   scroll-padding-top: 100px;
 }
-
-/*Scroll Button For Portfolio */
-
-.scroll-button {
-  margin-top: 30px;
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: #FF0000;
-  color: #FFFFFF;
-  font-weight: bold;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
-  z-index: 1;
-  position: relative;
-}
-
-.scroll-button:hover {
-  background-color: #cc0000;
-}
-
 
 /* Sections */
 section {
