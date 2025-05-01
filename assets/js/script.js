@@ -8,4 +8,8 @@ window.addEventListener('load', () => {
       preloader.style.display = 'none';
     }, 500); // Match transition duration
   });
-  
+
+  // Mobile nav toggle
+  document.querySelector('.menu-toggle').addEventListener('click', function () {
+    document.querySelector('.nav-links').classList.toggle('active');
+  });
