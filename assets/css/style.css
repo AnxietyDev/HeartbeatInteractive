@@ -312,6 +312,9 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
+  max-width: 1000px; /* or whatever fits your content */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .portfolio-item {
